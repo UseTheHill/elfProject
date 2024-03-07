@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <RouterLink />
+  <div class="flex flex-col min-h-screen font-Roboto bg-search-primary">
+    <SiteNavigation />
+    <RouterView />
   </div>
 </template>
 
 <script setup>
-import { RouterLink } from "vue-router";
+import { RouterView } from "vue-router";
+import SiteNavigation from "./components/SiteNavigation.vue";
 </script>
 
 <style lang="scss" scoped></style>
