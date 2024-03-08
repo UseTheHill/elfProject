@@ -11,9 +11,13 @@
     </div>
     <div v-if="searchError" class="text-red-500">{{ searchError }}</div>
     <div v-else-if="searchResults.length === 0">No results found.</div>
-    <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div v-for="user in searchResults" :key="user.id" class="mb-4">
-        <h2 class="text-lg font-bold">{{ user.login }}</h2>
+    <div v-else>
+      <div
+        v-for="user in searchResults"
+        :key="user.id"
+        class="mb-4 flex justify-center items-center flex-col bg-search-secondary p-4 rounded-md shadow-md"
+      >
+        <h2 class="text-lg font-bold mb-2">{{ user.login }}</h2>
         <img
           :src="user.avatar_url"
           :alt="`Avatar of ${user.login}`"
@@ -21,10 +25,16 @@
           @click="toggleUserInfo(user)"
         />
         <div v-if="user.showInfo" class="mt-2">
-          <p class="text-sm">Login: {{ user.login }}</p>
-          <p class="text-sm">
+          <p class="text-md">Name: {{ user.name }}</p>
+          <p class="text-md">Bio: {{ user.bio }}</p>
+          <p class="text-md">
             URL:
-            <a :href="user.html_url" target="_blank">{{ user.html_url }}</a>
+            <a
+              :href="user.html_url"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ user.html_url }}</a
+            >
           </p>
         </div>
       </div>

@@ -21,10 +21,9 @@
         <div class="text-black">
           <p>
             To use this application, simply type a GitHub username into the
-            search bar and press enter. The user's profile information,
-            including their name, bio, and avatar, will be displayed. You can
-            also click on the user's repositories to view more information about
-            each one.
+            search bar. The user's profile information, including their name,
+            bio, url, and avatar, will be displayed. You can also click on the
+            user's url to visit their profile page.
           </p>
         </div>
       </BaseModal>
