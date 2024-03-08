@@ -10,10 +10,14 @@
         </div>
       </RouterLink>
 
-      <div class="flex flex-1 justify-end">
+      <div class="flex flex-1 gap-3 justify-end">
         <i
           class="fa-solid fa-circle-info text-xl hover:text-search-secondary duration-150 cursor-pointer"
           @click="toggleModal"
+        ></i>
+        <i
+          class="fa-solid fa-rotate-right text-xl hover:text-search-secondary duration-150 cursor-pointer"
+          @click="reloadPage"
         ></i>
       </div>
 
@@ -39,5 +43,9 @@ import BaseModal from "./BaseModal.vue";
 const modalActive = ref(null);
 const toggleModal = () => {
   modalActive.value = !modalActive.value;
+};
+
+const reloadPage = () => {
+  location.reload();
 };
 </script>
